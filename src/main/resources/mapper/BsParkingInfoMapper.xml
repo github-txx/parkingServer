@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.parkingserver.dao.BsParkingInfoDao" >
+    <resultMap id="BaseResultMap" type="com.example.parkingserver.entity.BsParkingInfoVO" >
+        <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="addr" property="addr" />
+        <result column="input_user" property="inputUser" />
+        <result column="input_time" property="inputTime" />
+        <result column="developer_name" property="developerName" />
+        <result column="manager_name" property="managerName" />
+        <result column="operater_name" property="operaterName" />
+        <result column="property_name" property="propertyName" />
+        <result column="equipment" property="equipment" />
+        <result column="properties" property="properties" />
+        <result column="type" property="type" />
+        <result column="property_rights" property="propertyRights" />
+        <result column="manager_rights" property="managerRights" />
+        <result column="level" property="level" />
+        <result column="total" property="total" />
+        <result column="manager_total" property="managerTotal" />
+        <result column="file_id" property="fileId" />
+        <result column="create_by" property="createBy" />
+        <result column="create_dt" property="createDt" />
+        <result column="create_name" property="createName" />
+        <result column="modify_by" property="modifyBy" />
+        <result column="modify_dt" property="modifyDt" />
+        <result column="modify_name" property="modifyName" />
+        <result column="dr" property="dr" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                name,
+                addr,
+                input_user,
+                input_time,
+                developer_name,
+                manager_name,
+                operater_name,
+                property_name,
+                equipment,
+                properties,
+                type,
+                property_rights,
+                manager_rights,
+                level,
+                total,
+                manager_total,
+                file_id,
+                create_by,
+                create_dt,
+                create_name,
+                modify_by,
+                modify_dt,
+                modify_name,
+                dr
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" parameterType="com.example.parkingserver.entity.BsParkingInfoVO">
+        INSERT INTO bs_parking_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != name'>
+                name,
+            </if>
+            <if test ='null != addr'>
+                addr,
+            </if>
+            <if test ='null != inputUser'>
+                input_user,
+            </if>
+            <if test ='null != inputTime'>
+                input_time,
+            </if>
+            <if test ='null != developerName'>
+                developer_name,
+            </if>
+            <if test ='null != managerName'>
+                manager_name,
+            </if>
+            <if test ='null != operaterName'>
+                operater_name,
+            </if>
+            <if test ='null != propertyName'>
+                property_name,
+            </if>
+            <if test ='null != equipment'>
+                equipment,
+            </if>
+            <if test ='null != properties'>
+                properties,
+            </if>
+            <if test ='null != type'>
+                type,
+            </if>
+            <if test ='null != propertyRights'>
+                property_rights,
+            </if>
+            <if test ='null != managerRights'>
+                manager_rights,
+            </if>
+            <if test ='null != level'>
+                level,
+            </if>
+            <if test ='null != total'>
+                total,
+            </if>
+            <if test ='null != managerTotal'>
+                manager_total,
+            </if>
+            <if test ='null != fileId'>
+                file_id,
+            </if>
+            <if test ='null != createBy'>
+                create_by,
+            </if>
+            <if test ='null != createDt'>
+                create_dt,
+            </if>
+            <if test ='null != createName'>
+                create_name,
+            </if>
+            <if test ='null != modifyBy'>
+                modify_by,
+            </if>
+            <if test ='null != modifyDt'>
+                modify_dt,
+            </if>
+            <if test ='null != modifyName'>
+                modify_name,
+            </if>
+            <if test ='null != dr'>
+                dr
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != name'>
+                #{name},
+            </if>
+            <if test ='null != addr'>
+                #{addr},
+            </if>
+            <if test ='null != inputUser'>
+                #{inputUser},
+            </if>
+            <if test ='null != inputTime'>
+                #{inputTime},
+            </if>
+            <if test ='null != developerName'>
+                #{developerName},
+            </if>
+            <if test ='null != managerName'>
+                #{managerName},
+            </if>
+            <if test ='null != operaterName'>
+                #{operaterName},
+            </if>
+            <if test ='null != propertyName'>
+                #{propertyName},
+            </if>
+            <if test ='null != equipment'>
+                #{equipment},
+            </if>
+            <if test ='null != properties'>
+                #{properties},
+            </if>
+            <if test ='null != type'>
+                #{type},
+            </if>
+            <if test ='null != propertyRights'>
+                #{propertyRights},
+            </if>
+            <if test ='null != managerRights'>
+                #{managerRights},
+            </if>
+            <if test ='null != level'>
+                #{level},
+            </if>
+            <if test ='null != total'>
+                #{total},
+            </if>
+            <if test ='null != managerTotal'>
+                #{managerTotal},
+            </if>
+            <if test ='null != fileId'>
+                #{fileId},
+            </if>
+            <if test ='null != createBy'>
+                #{createBy},
+            </if>
+            <if test ='null != createDt'>
+                #{createDt},
+            </if>
+            <if test ='null != createName'>
+                #{createName},
+            </if>
+            <if test ='null != modifyBy'>
+                #{modifyBy},
+            </if>
+            <if test ='null != modifyDt'>
+                #{modifyDt},
+            </if>
+            <if test ='null != modifyName'>
+                #{modifyName},
+            </if>
+            <if test ='null != dr'>
+                #{dr}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM bs_parking_info
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.parkingserver.entity.BsParkingInfoVO">
+        UPDATE bs_parking_info
+        <set>
+            <if test ='null != name'>name = #{name},</if>
+            <if test ='null != addr'>addr = #{addr},</if>
+            <if test ='null != inputUser'>input_user = #{inputUser},</if>
+            <if test ='null != inputTime'>input_time = #{inputTime},</if>
+            <if test ='null != developerName'>developer_name = #{developerName},</if>
+            <if test ='null != managerName'>manager_name = #{managerName},</if>
+            <if test ='null != operaterName'>operater_name = #{operaterName},</if>
+            <if test ='null != propertyName'>property_name = #{propertyName},</if>
+            <if test ='null != equipment'>equipment = #{equipment},</if>
+            <if test ='null != properties'>properties = #{properties},</if>
+            <if test ='null != type'>type = #{type},</if>
+            <if test ='null != propertyRights'>property_rights = #{propertyRights},</if>
+            <if test ='null != managerRights'>manager_rights = #{managerRights},</if>
+            <if test ='null != level'>level = #{level},</if>
+            <if test ='null != total'>total = #{total},</if>
+            <if test ='null != managerTotal'>manager_total = #{managerTotal},</if>
+            <if test ='null != fileId'>file_id = #{fileId},</if>
+            <if test ='null != createBy'>create_by = #{createBy},</if>
+            <if test ='null != createDt'>create_dt = #{createDt},</if>
+            <if test ='null != createName'>create_name = #{createName},</if>
+            <if test ='null != modifyBy'>modify_by = #{modifyBy},</if>
+            <if test ='null != modifyDt'>modify_dt = #{modifyDt},</if>
+            <if test ='null != modifyName'>modify_name = #{modifyName},</if>
+            <if test ='null != dr'>dr = #{dr}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM bs_parking_info
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM bs_parking_info
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM bs_parking_info
+    </select>
+</mapper>

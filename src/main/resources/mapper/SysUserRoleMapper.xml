@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.parkingserver.dao.SysUserRoleDao" >
+    <resultMap id="BaseResultMap" type="com.example.parkingserver.entity.SysUserRoleVO" >
+        <result column="id" property="id" />
+        <result column="role_name" property="roleName" />
+        <result column="role_code" property="roleCode" />
+        <result column="create_by" property="createBy" />
+        <result column="create_dt" property="createDt" />
+        <result column="create_name" property="createName" />
+        <result column="modify_by" property="modifyBy" />
+        <result column="modify_dt" property="modifyDt" />
+        <result column="modify_name" property="modifyName" />
+        <result column="dr" property="dr" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                role_name,
+                role_code,
+                create_by,
+                create_dt,
+                create_name,
+                modify_by,
+                modify_dt,
+                modify_name,
+                dr
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" parameterType="com.example.parkingserver.entity.SysUserRoleVO">
+        INSERT INTO sys_user_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != roleName'>
+                role_name,
+            </if>
+            <if test ='null != roleCode'>
+                role_code,
+            </if>
+            <if test ='null != createBy'>
+                create_by,
+            </if>
+            <if test ='null != createDt'>
+                create_dt,
+            </if>
+            <if test ='null != createName'>
+                create_name,
+            </if>
+            <if test ='null != modifyBy'>
+                modify_by,
+            </if>
+            <if test ='null != modifyDt'>
+                modify_dt,
+            </if>
+            <if test ='null != modifyName'>
+                modify_name,
+            </if>
+            <if test ='null != dr'>
+                dr
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != roleName'>
+                #{roleName},
+            </if>
+            <if test ='null != roleCode'>
+                #{roleCode},
+            </if>
+            <if test ='null != createBy'>
+                #{createBy},
+            </if>
+            <if test ='null != createDt'>
+                #{createDt},
+            </if>
+            <if test ='null != createName'>
+                #{createName},
+            </if>
+            <if test ='null != modifyBy'>
+                #{modifyBy},
+            </if>
+            <if test ='null != modifyDt'>
+                #{modifyDt},
+            </if>
+            <if test ='null != modifyName'>
+                #{modifyName},
+            </if>
+            <if test ='null != dr'>
+                #{dr}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM sys_user_role
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.parkingserver.entity.SysUserRoleVO">
+        UPDATE sys_user_role
+        <set>
+            <if test ='null != roleName'>role_name = #{roleName},</if>
+            <if test ='null != roleCode'>role_code = #{roleCode},</if>
+            <if test ='null != createBy'>create_by = #{createBy},</if>
+            <if test ='null != createDt'>create_dt = #{createDt},</if>
+            <if test ='null != createName'>create_name = #{createName},</if>
+            <if test ='null != modifyBy'>modify_by = #{modifyBy},</if>
+            <if test ='null != modifyDt'>modify_dt = #{modifyDt},</if>
+            <if test ='null != modifyName'>modify_name = #{modifyName},</if>
+            <if test ='null != dr'>dr = #{dr}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_user_role
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_user_role
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM sys_user_role
+    </select>
+</mapper>

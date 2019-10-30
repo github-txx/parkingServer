@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.parkingserver.dao.BsParkingLotInfoDao" >
+    <resultMap id="BaseResultMap" type="com.example.parkingserver.entity.BsParkingLotInfoVO" >
+        <result column="id" property="id" />
+        <result column="parking_id" property="parkingId" />
+        <result column="code" property="code" />
+        <result column="lot_no" property="lotNo" />
+        <result column="owner" property="owner" />
+        <result column="owner_mobile" property="ownerMobile" />
+        <result column="valuation" property="valuation" />
+        <result column="purchase_price" property="purchasePrice" />
+        <result column="type" property="type" />
+        <result column="prrchase_time" property="prrchaseTime" />
+        <result column="status" property="status" />
+        <result column="create_by" property="createBy" />
+        <result column="create_dt" property="createDt" />
+        <result column="create_name" property="createName" />
+        <result column="modify_by" property="modifyBy" />
+        <result column="modify_dt" property="modifyDt" />
+        <result column="modify_name" property="modifyName" />
+        <result column="dr" property="dr" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+                id,
+                parking_id,
+                code,
+                lot_no,
+                owner,
+                owner_mobile,
+                valuation,
+                purchase_price,
+                type,
+                prrchase_time,
+                status,
+                create_by,
+                create_dt,
+                create_name,
+                modify_by,
+                modify_dt,
+                modify_name,
+                dr
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" parameterType="com.example.parkingserver.entity.BsParkingLotInfoVO">
+        INSERT INTO bs_parking_lot_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test ='null != parkingId'>
+                parking_id,
+            </if>
+            <if test ='null != code'>
+                code,
+            </if>
+            <if test ='null != lotNo'>
+                lot_no,
+            </if>
+            <if test ='null != owner'>
+                owner,
+            </if>
+            <if test ='null != ownerMobile'>
+                owner_mobile,
+            </if>
+            <if test ='null != valuation'>
+                valuation,
+            </if>
+            <if test ='null != purchasePrice'>
+                purchase_price,
+            </if>
+            <if test ='null != type'>
+                type,
+            </if>
+            <if test ='null != prrchaseTime'>
+                prrchase_time,
+            </if>
+            <if test ='null != status'>
+                status,
+            </if>
+            <if test ='null != createBy'>
+                create_by,
+            </if>
+            <if test ='null != createDt'>
+                create_dt,
+            </if>
+            <if test ='null != createName'>
+                create_name,
+            </if>
+            <if test ='null != modifyBy'>
+                modify_by,
+            </if>
+            <if test ='null != modifyDt'>
+                modify_dt,
+            </if>
+            <if test ='null != modifyName'>
+                modify_name,
+            </if>
+            <if test ='null != dr'>
+                dr
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test ='null != parkingId'>
+                #{parkingId},
+            </if>
+            <if test ='null != code'>
+                #{code},
+            </if>
+            <if test ='null != lotNo'>
+                #{lotNo},
+            </if>
+            <if test ='null != owner'>
+                #{owner},
+            </if>
+            <if test ='null != ownerMobile'>
+                #{ownerMobile},
+            </if>
+            <if test ='null != valuation'>
+                #{valuation},
+            </if>
+            <if test ='null != purchasePrice'>
+                #{purchasePrice},
+            </if>
+            <if test ='null != type'>
+                #{type},
+            </if>
+            <if test ='null != prrchaseTime'>
+                #{prrchaseTime},
+            </if>
+            <if test ='null != status'>
+                #{status},
+            </if>
+            <if test ='null != createBy'>
+                #{createBy},
+            </if>
+            <if test ='null != createDt'>
+                #{createDt},
+            </if>
+            <if test ='null != createName'>
+                #{createName},
+            </if>
+            <if test ='null != modifyBy'>
+                #{modifyBy},
+            </if>
+            <if test ='null != modifyDt'>
+                #{modifyDt},
+            </if>
+            <if test ='null != modifyName'>
+                #{modifyName},
+            </if>
+            <if test ='null != dr'>
+                #{dr}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM bs_parking_lot_info
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.example.parkingserver.entity.BsParkingLotInfoVO">
+        UPDATE bs_parking_lot_info
+        <set>
+            <if test ='null != parkingId'>parking_id = #{parkingId},</if>
+            <if test ='null != code'>code = #{code},</if>
+            <if test ='null != lotNo'>lot_no = #{lotNo},</if>
+            <if test ='null != owner'>owner = #{owner},</if>
+            <if test ='null != ownerMobile'>owner_mobile = #{ownerMobile},</if>
+            <if test ='null != valuation'>valuation = #{valuation},</if>
+            <if test ='null != purchasePrice'>purchase_price = #{purchasePrice},</if>
+            <if test ='null != type'>type = #{type},</if>
+            <if test ='null != prrchaseTime'>prrchase_time = #{prrchaseTime},</if>
+            <if test ='null != status'>status = #{status},</if>
+            <if test ='null != createBy'>create_by = #{createBy},</if>
+            <if test ='null != createDt'>create_dt = #{createDt},</if>
+            <if test ='null != createName'>create_name = #{createName},</if>
+            <if test ='null != modifyBy'>modify_by = #{modifyBy},</if>
+            <if test ='null != modifyDt'>modify_dt = #{modifyDt},</if>
+            <if test ='null != modifyName'>modify_name = #{modifyName},</if>
+            <if test ='null != dr'>dr = #{dr}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM bs_parking_lot_info
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM bs_parking_lot_info
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM bs_parking_lot_info
+    </select>
+</mapper>
