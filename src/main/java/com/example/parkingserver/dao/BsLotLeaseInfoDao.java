@@ -15,37 +15,45 @@ import java.util.List;
 public interface BsLotLeaseInfoDao {
 
     /**
-     * 查询总数
-     */
-    public int countFindAll();
+     * [新增]
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    int insert(BsLotLeaseInfoVO bsLotLeaseInfo);
 
     /**
-     * 根据条件查询
-     */
-    public List<BsLotLeaseInfoVO> freeFind(BsLotLeaseInfoVO obj);
+     * [刪除]
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    int delete(int id);
 
     /**
-     * 根据条件查询的数量
-     */
-    public int countFreeFind(BsLotLeaseInfoVO obj);
+     * [更新]
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    int update(BsLotLeaseInfoVO bsLotLeaseInfo);
 
     /**
-     * 根据主键查询对象
-     */
-    public BsLotLeaseInfoVO findByPK(BsLotLeaseInfoVO obj);
+     * [查詢] 根據主鍵 id 查詢
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    BsLotLeaseInfoVO load(int id);
 
     /**
-     * 添加对象
-     */
-    public void insert(BsLotLeaseInfoVO obj);
+     * [查詢] 分頁查詢
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    List<BsLotLeaseInfoVO> pageList(int offset, int pagesize);
 
     /**
-     * 根据主键修改对象
-     */
-    public void update(BsLotLeaseInfoVO obj);
+     * [查詢] 分頁查詢 count
+     * @author zhousze
+     * @date 2019/10/30
+     **/
+    int pageListCount(int offset,int pagesize);
 
-    /**
-     * 根据主键删除对象
-     */
-    public void remove(BsLotLeaseInfoVO obj);
 }
